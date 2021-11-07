@@ -34,14 +34,14 @@
                 </div>
                 <form>
                   <div class="mb-3">
-                    <label class="form-label">Email</label>
+                    <label class="form-label">Usuario</label>
                     <input class="form-control form-control-lg" type="email" name="email"
-                      placeholder="Ingrese su Correo Eléctrónico" />
+                      placeholder="Ingrese su usuario" [(ngModel)]="user" >
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Password</label>
+                    <label class="form-label">Contraseña</label>
                     <input class="form-control form-control-lg" type="password" name="password"
-                      placeholder="Ingrese su Contraseña" />
+                      placeholder="Ingrese su Contraseña" [(ngModel)]="pass">
                     <small>
                       <a href="index.html">Olvidó su contraseña?</a>
                     </small>
@@ -55,9 +55,19 @@
                     </label>
                   </div>
                   <div class="text-center mt-3">
-                    <a href="home.html" class="btn btn-lg btn-info">Ingresar</a>
-                    <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                    <button type="submit" class="btn btn-lg btn-primary" (click)="comparar()">Sign in</button>
                   </div>
+                  {{user}}
+                  {{pass}}
+                  {{correcto}}
+                  <div *ngIf="correcto==1"
+            class="alert alert-success" role="alert">
+                Acceso correcto
+            </div>
+            <div *ngIf="correcto==0"
+            class="alert alert-danger" role="alert">
+                Nombre de usuario o contraseña incorrectos
+            </div>
                 </form>
               </div>
             </div>

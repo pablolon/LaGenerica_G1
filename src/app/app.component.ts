@@ -6,36 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tienda';
+  title = 'Login';
+  
+  user_correcto:string="admininicial";
+  pass_correcto:string="admin123456";
 
-  nombre:string = "Pablo Londoño"; //Binding por interpolación
-  numero:number = 3.14;
-  booleano:boolean = true;
-  cualquiera:any = "Cualquier dato"; 
+  user:string="";
+  pass:string="";
 
-  sumar(num1:number, num2:number):number{
-    return num1 * num2
+  correcto:number=-1;
+
+  // si queremos más usuarios
+  lista_users =["diego","carjim","admin","user"];
+
+  comparar(){
+    if(this.user===this.user_correcto){
+      this.correcto=1;
+      if(this.pass===this.pass_correcto){
+        this.correcto=1;
+      }else{
+        this.correcto=0;
+      }
+    }else{
+      this.correcto=0;
     }
-nuevo_valor:string="red";
-nuevo_tipo:string="text";
-
-titulo1:string="Titulo Nuevo";
-mostrartitulo(){
-  this.titulo1="Otro Título";
-}
-
-//directivas
-persona1:string="Pablo";
-persona1sexo:string="m";
-
-lista=Array()
-llenarlista(){
-  for (let i = 0; i < 10; i++) {
-    this.lista.push(Math.random());
   }
-
-  }
-
-  nombre_estudiante:string="";
+  
 
 }
