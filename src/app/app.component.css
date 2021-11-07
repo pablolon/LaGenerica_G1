@@ -19,3 +19,14 @@ p {
     background-color: #00B2CA;
     color:white;
 }
+
+#tit_principal{
+    padding-top: 20px;
+}
+
+#bienvenido{
+    color: #00B2CA;
+    font-size: 45px;
+    font-weight: bolder;
+}
+

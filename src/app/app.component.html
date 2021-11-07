@@ -1,39 +1,35 @@
-<div class="col-md-12 text-center">
+<div class="col-md-12 text-center" id=tit_principal>
   <h1 class="h2">TIENDA LA GENÉRICA</h1>
   <hr>
- 
 </div>
+<div class="container d-flex flex-column">
+  <div class="row ">
 
-<main class="d-flex w-100">
-   <div class="container d-flex flex-column">
-    <div class="row vh-100">
-
-      <div class="col-md-6 text-center">
-        
-        <!-- <img src="https://cdn.pixabay.com/photo/2012/04/26/19/53/pear-42964_960_720.png" alt="frutas" width="100%" /> -->
-        <img src="assets/pears.svg" alt="frutas" width="100%" />
-
+      <div id="imagen" class="col-md-6 text-center p-5">
+         <img src="assets/pears.svg" alt="frutas" width="90%" />
       </div>
-      <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+
+      <div id="tabla" class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+       
         <div class="d-table-cell align-middle">
-          <div class="text-center mt-4">
-            <h1 class="h3">Bienvenido</h1>
-            
+          
+          <div class="text-center">
+            <h1 class="h3" id="bienvenido">Bienvenido</h1>
           </div>
-          <br>
-          <div class="text-center mt-4">
+          
+          <div class="text-center">
             <h1 class="h2"></h1>
-            <p class="lead">
-              Ingrese a su cuenta
-            </p>
+            <p class="lead">Ingrese a su cuenta</p>
           </div>
+          
           <div class="card">
             <div class="card-body">
               <div class="m-sm-4">
                 <div class="text-center">
                   <img src="assets/logo1.svg" alt="Tienda La Genérica" class="img-fluid rounded-circle" width="132"
-                    height="132" />
+                    height="132"/>
                 </div>
+                
                 <form class="login">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
@@ -59,8 +55,6 @@
                   <div class="text-center mt-3">
                     <button class="btn btn-lg btn-info" (click)="comparar()"> Ingresar</button>
 
-                    
-                    
                     <!-- Alertas -->
                   <div *ngIf="correcto==1" class="alert alert-success 
                     animate_animated animate_bounceInLeft" role="alert">
