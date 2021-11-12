@@ -1,0 +1,36 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+p {
+    font-size: 30px;
+    color:#00B2CA;
+    font-weight: bolder;
+    
+}
+
+.h2 {
+    font-size: 50px;
+    color:#00B2CA;
+    font-weight: bolder;
+}
+
+.form-check-input {
+    background-color: #00B2CA;
+}
+
+.btn-info {
+    background-color: #00B2CA;
+    color:white;
+}
+
+#tit_principal{
+    padding-top: 20px;
+}
+
+#bienvenido{
+    color: #00B2CA;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
