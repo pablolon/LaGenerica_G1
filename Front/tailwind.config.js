@@ -290,11 +290,7 @@ const config = {
                         },
                         'tbody tr'         : {
                             borderBottomColor: 'var(--fuse-border)'
-                        },
-                        'ol[type="A" s]'   : false,
-                        'ol[type="a" s]'   : false,
-                        'ol[type="I" s]'   : false,
-                        'ol[type="i" s]'   : false
+                        }
                     }
                 },
                 sm     : {

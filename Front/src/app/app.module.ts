@@ -12,12 +12,6 @@ import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
 import { appRoutes } from 'app/app.routing';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ClientesComponent } from './clientes/clientes.component';
-import { ProveedoresComponent } from './proveedores/proveedores.component';
-import { ProductosComponent } from './productos/productos.component';
-import { VentasComponent } from './ventas/ventas.component';
-import { ReportesComponent } from './reportes/reportes.component';
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
@@ -26,13 +20,7 @@ const routerConfig: ExtraOptions = {
 
 @NgModule({
     declarations: [
-        AppComponent,
-        UsuariosComponent,
-        ClientesComponent,
-        ProveedoresComponent,
-        ProductosComponent,
-        VentasComponent,
-        ReportesComponent
+        AppComponent
     ],
     imports     : [
         BrowserModule,

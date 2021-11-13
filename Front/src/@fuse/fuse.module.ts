@@ -1,6 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { FuseConfirmationModule } from '@fuse/services/confirmation';
 import { FuseMediaWatcherModule } from '@fuse/services/media-watcher/media-watcher.module';
 import { FuseSplashScreenModule } from '@fuse/services/splash-screen/splash-screen.module';
 import { FuseTailwindConfigModule } from '@fuse/services/tailwind/tailwind.module';
@@ -8,7 +7,6 @@ import { FuseUtilsModule } from '@fuse/services/utils/utils.module';
 
 @NgModule({
     imports  : [
-        FuseConfirmationModule,
         FuseMediaWatcherModule,
         FuseSplashScreenModule,
         FuseTailwindConfigModule,

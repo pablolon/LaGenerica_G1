@@ -67,13 +67,13 @@
             <mat-icon
                 class="icon-size-7 text-current"
                 [svgIcon]="'heroicons_solid:cog'"></mat-icon>
-            <div class="ml-3 text-2xl font-semibold tracking-tight">Settings</div>
+            <div class="ml-3 text-2xl font-semibold tracking-tight"> Configuración</div>
         </div>
 
         <div class="flex flex-col p-6">
 
             <!-- Theme -->
-            <div class="text-md font-semibold text-secondary">THEME</div>
+            <div class="text-md font-semibold text-secondary">TEMAS</div>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
                 <ng-container *ngFor="let theme of themes">
                     <div
@@ -95,7 +95,7 @@
             <hr class="my-8">
 
             <!-- Scheme -->
-            <div class="text-md font-semibold text-secondary">SCHEME</div>
+            <div class="text-md font-semibold text-secondary">ESQUEMAS</div>
             <div class="grid grid-cols-3 gap-3 justify-items-start mt-6">
                 <!-- Auto -->
                 <div
@@ -127,7 +127,7 @@
                     <div
                         class="flex items-center ml-2 font-medium leading-5"
                         [class.text-secondary]="config.scheme !== 'dark'">
-                        Dark
+                        Obscuro
                     </div>
                 </div>
                 <!-- Light -->
@@ -143,7 +143,7 @@
                     <div
                         class="flex items-center ml-2 font-medium leading-5"
                         [class.text-secondary]="config.scheme !== 'light'">
-                        Light
+                        Claro
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <hr class="my-8">
 
             <!-- Layout -->
-            <div class="text-md font-semibold text-secondary">LAYOUT</div>
+            <div class="text-md font-semibold text-secondary">PLANTILLA</div>
             <div class="grid grid-cols-3 gap-3 mt-6">
 
                 <!-- Empty -->
@@ -166,7 +166,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'empty'">
-                        Empty
+                        Limpia
                     </div>
                 </div>
 
@@ -200,7 +200,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'classic'">
-                        Classic
+                        Clasica
                     </div>
                 </div>
 
@@ -237,7 +237,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'classy'">
-                        Classy
+                        Elegante
                     </div>
                 </div>
 
@@ -270,7 +270,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'compact'">
-                        Compact
+                        Compacta
                     </div>
                 </div>
 
@@ -303,7 +303,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'dense'">
-                        Dense
+                        Densa
                     </div>
                 </div>
 
@@ -337,7 +337,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'futuristic'">
-                        Futuristic
+                        Futurista
                     </div>
                 </div>
 
@@ -372,7 +372,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'thin'">
-                        Thin
+                        Angosta
                     </div>
                 </div>
 
@@ -404,7 +404,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'centered'">
-                        Centered
+                        Centrada
                     </div>
                 </div>
 
@@ -436,7 +436,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'enterprise'">
-                        Enterprise
+                        Empresarial
                     </div>
                 </div>
 
@@ -498,7 +498,7 @@
                     <div
                         class="mt-2 text-md font-medium text-center text-secondary"
                         [class.text-primary]="config.layout === 'modern'">
-                        Modern
+                        Moderna
                     </div>
                 </div>
 
