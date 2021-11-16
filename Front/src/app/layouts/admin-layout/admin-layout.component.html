@@ -1,13 +1,12 @@
 <!--  PAGINA DE CONFIGURACION DE LA VISTA  -->
 
-<div class="wrapper">
   <div class="sidebar"><app-sidebar></app-sidebar></div>
   <div class="main-panel">
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
   </div>
-</div>
+
 <div class=" fixed-plugin">
   <div class=" show-dropdown" ngbDropdown>
     <a data-toggle="dropdown" ngbDropdownToggle>
@@ -16,8 +15,8 @@
     <ul ngbDropdownMenu>
       <li class=" header-title">Fondo Menú Principal</li>
       <li class=" adjustments-line">
-        <a class=" switch-trigger background-color" href="javascript:void(0)">
-          <div class=" badge-colors text-center">
+        <a class=" switch-trigger " >
+          <div class="  text-center">
             <span
               class=" badge filter badge-danger"
               [ngClass]="{'active':sidebarColor==='red'}" (click)="changeSidebarColor('red')"
@@ -29,8 +28,7 @@
             >
             </span>
             <span class=" badge filter badge-info" [ngClass]="{'active':sidebarColor==='blue'}" (click)="changeSidebarColor('blue')"> </span>
-            <span class=" badge filter badge-success" [ngClass]="{'active':sidebarColor==='green'}" (click)="changeSidebarColor('green')">
-            </span>
+            <span class=" badge filter badge-success" [ngClass]="{'active':sidebarColor==='green'}" (click)="changeSidebarColor('green')"></span>
           </div>
           <div class=" clearfix"></div>
         </a>
@@ -44,3 +42,4 @@
     </ul>
   </div>
 </div>
+

@@ -18,14 +18,7 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
 
-  {
-    path: "/typography",
-    title: "Ingresar",
-    rtlTitle: "Login",
-    icon: "icon-align-center",
-    class: ""
-  },
-
+  
   {
     path: "/tables",
     title: "Usuarios",
@@ -66,10 +59,11 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/rtl",
     title: "RTL Support",
-    rtlTitle: "ار تي ال",
+    rtlTitle: "Idioma",
     icon: "icon-world",
     class: ""
-  }
+  },
+
 ];
 
 @Component({
