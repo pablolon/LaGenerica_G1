@@ -26,19 +26,19 @@ export class TypographyComponent implements OnInit {
       this.correcto = 1;
       if (this.pass === this.passcorrecto) {
         this.correcto = 1;
-        this.showNotification('top', 'right',1);
+        //this.showNotification('top', 'right',1);
 
-        this.router.navigate(['/clientes'])
+        this.router.navigate(['/dashboard'])
       } else {
         this.correcto = 0;
-        this.showNotification('top', 'right',2);
+        //this.showNotification('top', 'right',2);
       }
     } else {
       this.correcto = 0;
-      this.showNotification('top', 'right',2);
+      //this.showNotification('top', 'right',2);
     }
   }
-
+/**
   showNotification(from, align,type) {
     switch (type) {
       case 1:
@@ -63,7 +63,7 @@ export class TypographyComponent implements OnInit {
         break;
     }
   }
-
+*/
   ngOnInit(): void {
   }
 

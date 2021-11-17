@@ -1,76 +1,136 @@
-import { Component, OnInit } from "@angular/core";
-import { ToastrService } from 'ngx-toastr';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Subject, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { FileUploadService } from './file-upload.service';
+
 
 @Component({
-  selector: "app-notifications",
-  templateUrl: "notifications.component.html"
+  selector: 'app-notifications',
+  templateUrl: './notifications.component.html',
+  styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent implements OnInit {
-  staticAlertClosed  = false;
-  staticAlertClosed1 = false;
-  staticAlertClosed2 = false;
-  staticAlertClosed3 = false;
-  staticAlertClosed4 = false;
-  staticAlertClosed5 = false;
-  staticAlertClosed6 = false;
-  staticAlertClosed7 = false;
+  dtOptions: { pagingType: string; columns: { title: string; }[]; pageLength: number; responsive: boolean; language: { processing: string; search: string; lengthMenu: string; info: string; infoEmpty: string; infoFiltered: string; infoPostFix: string; loadingRecords: string; zeroRecords: string; emptyTable: string; paginate: { first: string; previous: string; next: string; last: string; }; aria: { sortAscending: string; sortDescending: string; }; }; };
 
-  constructor(private toastr: ToastrService) {}
+  //Función constructora
+  constructor(private objetohttp: HttpClient, private fileUploadService: FileUploadService) { }
 
-  showNotification(from, align){
+  ///////////////// GET /////////////////////////////
+  //opciones y objeto revisor de la tabla
+  //dtOptions: DataTables.Settings= {};
+  dtTrigger: Subject<any> = new Subject<any>();
 
-      const color = Math.floor((Math.random() * 5) + 1);
+  //variable receptora de documentos
+  res: any;
+  //variable contenedora de contenidos
+  contenido: any;
+  //url api get
+  urlapiGET: string = "http://localhost:8080/api/productos";
 
-      switch(color){
-        case 1:
-        this.toastr.info('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Welcome to <b>Black Dashboard Angular</b> - a beautiful freebie for every web developer.', '', {
-           disableTimeOut: true,
-           closeButton: true,
-           enableHtml: true,
-           toastClass: "alert alert-info alert-with-icon",
-           positionClass: 'toast-' + from + '-' +  align
-         });
-        break;
-        case 2:
-        this.toastr.success('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Welcome to <b>Black Dashboard Angular</b> - a beautiful freebie for every web developer.', '', {
-           disableTimeOut: true,
-           closeButton: true,
-           enableHtml: true,
-           toastClass: "alert alert-success alert-with-icon",
-           positionClass: 'toast-' + from + '-' +  align
-         });
-        break;
-        case 3:
-        this.toastr.warning('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Welcome to <b>Black Dashboard Angular</b> - a beautiful freebie for every web developer.', '', {
-           disableTimeOut: true,
-           closeButton: true,
-           enableHtml: true,
-           toastClass: "alert alert-warning alert-with-icon",
-           positionClass: 'toast-' + from + '-' +  align
-         });
-        break;
-        case 4:
-        this.toastr.error('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Welcome to <b>Black Dashboard Angular</b> - a beautiful freebie for every web developer.', '', {
-           disableTimeOut: true,
-           enableHtml: true,
-           closeButton: true,
-           toastClass: "alert alert-danger alert-with-icon",
-           positionClass: 'toast-' + from + '-' +  align
-         });
-         break;
-         case 5:
-         this.toastr.show('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Welcome to <b>Black Dashboard Angular</b> - a beautiful freebie for every web developer.', '', {
-            disableTimeOut: true,
-            closeButton: true,
-            enableHtml: true,
-            toastClass: "alert alert-primary alert-with-icon",
-            positionClass: 'toast-' + from + '-' +  align
-          });
-        break;
-        default:
-        break;
-      }
+  //FUNCIÓN DE CONTROL DE ERRORES
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Error desconocido!';
+    if (error.error instanceof ErrorEvent) {
+      // Errores del lado del cliente
+      errorMessage = `Error: ${error.error.message}\n ${error.status}`;
+    } else {
+      // Errores del lado del servidor
+      errorMessage = `Codigo de Error: ${error.status} \nMensaje: ${error.message}`;
+    }
+    //MOSTRANDO UN ERROR EN UNA ALERTA
+    //window.alert(errorMessage);
+    return throwError(errorMessage);
   }
 
-  ngOnInit() {}
+  //aliminando objeto revisor de cambios de la tabla
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
+  }
+
+
+
+  ///////////////// METODOS ANGULAR /////////////////////////////
+
+  //FUNCIÓN DE EJECUCIÓN ANTES DE LA CARGA DE LA PAGINA
+  ngOnInit(): void {
+    //utilizando el servicio en la url
+    this.res = this.objetohttp.get(this.urlapiGET).pipe(catchError(this.handleError));
+
+    //suscribe el archivo json y lo convierte   
+    this.res.subscribe((datos: any[]) => {
+      this.contenido = datos;
+      console.log(this.contenido);
+      this.dtTrigger.next(this.dtOptions);
+    });
+
+    //Opciones especiales de la tabla, localización y caracteristicas
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      columns: [{
+        title: 'codigoproducto',
+      }, {
+        title: 'ivacompra',
+      }, {
+        title: 'nitproveedor',
+      }, {
+        title: 'nombreproducto',
+      }, { 
+        title: 'preciocompra',
+      }, {
+        title: 'precioventa'
+      }],
+      pageLength: 10,
+      responsive: true,
+      language: {
+        processing: "Procesando...",
+        search: "Buscar:",
+        lengthMenu: "Mostrar _MENU_ elementos",
+        info: "Mostrando desde _START_ al _END_ de _TOTAL_ elementos",
+        infoEmpty: "Mostrando ningún elemento.",
+        infoFiltered: "(filtrado _MAX_ elementos total)",
+        infoPostFix: "",
+        loadingRecords: "Cargando registros...",
+        zeroRecords: "No se encontraron registros",
+        emptyTable: "No hay datos disponibles en la tabla",
+        paginate: {
+          first: "Primero",
+          previous: "Anterior",
+          next: "Siguiente",
+          last: "Último"
+        },
+        aria: {
+          sortAscending: ": Activar para ordenar la tabla en orden ascendente",
+          sortDescending: ": Activar para ordenar la tabla en orden descendente"
+        }
+      }
+    };
+  }
+
+  ///////////////// POST /////////////////////////////
+  codigoRespuesta: number = 0;
+  res2: any;
+
+  //lista que almacenara los resultados de la insercion de cada linea
+  resultados: any;
+
+  // Variable to store shortLink from api response
+  file!: File; //variable para almacenar los datos
+
+  //variable de confimación de recepcion de archivo
+  recibido: boolean = false;
+
+  // En caso de seleccionar archivo, escojer el primer archivo
+  onChange(event: any) {
+    this.file = event.target.files[0];
+  }
+
+  // Cuandop haga click, iniciar proceso de envio
+  async onUpload() {
+    console.log(this.file);
+    this.resultados = await this.fileUploadService.upload(this.file);
+    console.log(this.resultados);
+  }
+
 }
+
