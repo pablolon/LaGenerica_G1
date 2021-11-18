@@ -9,6 +9,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { LoginComponent } from './login/login.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ProveedorComponent } from './proveedor/proveedor.component';
+import { ProductoComponent } from './producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent,
+    UsuarioComponent,
+    ProveedorComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,62 +1,63 @@
-<div class="b-example-divider"></div>
+<app-navbar></app-navbar>
+<div class="d-flex" id="wrapper">
 
-  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">Collapsible</span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Updates</a></li>
-            <li><a href="#" class="link-dark rounded">Reports</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New...</a></li>
-            <li><a href="#" class="link-dark rounded">Profile</a></li>
-            <li><a href="#" class="link-dark rounded">Settings</a></li>
-            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="col col-m-12 navbar-brand" [routerLink]="'/home'">
+        <img src="/assets/logo1.svg" width="50" height="50" class="d-inline-block" alt="">LA GENÉRICA </a>
+    </nav>
+    <div class="list-group list-group-flush">
+      <a class="list-group-item list-group-item-action bg-light" [routerLink]="'/usuario'">Usuarios</a>
+      <a class="list-group-item list-group-item-action bg-light disabled" [routerLink]="'/cliente'">Clientes</a>
+      <a class="list-group-item list-group-item-action bg-light disabled" [routerLink]="'/proveedor'">Proveedores</a>
+      <a class="list-group-item list-group-item-action bg-light" [routerLink]="'/producto'">Productos</a>
+      <a class="list-group-item list-group-item-action bg-light disabled" [routerLink]="'/ventas'">Ventas</a>
+      <div class="dropdown">
+        <a class="list-group-item list-group-item-action bg-light dropdown-toggle dropdown-toggle-split disabled"
+          [routerLink]="'/reporte'" data-bs-toggle="dropdown" aria-expanded="false">
+          Reportes
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Venta por Proveedor</a></li>
+          <li><a class="dropdown-item" href="#">Ventas por Cliente</a></li>
+          <li><a class="dropdown-item" href="#">Otros Reportes</a></li>
+        </ul>
+      </div>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Salir</a>
+    </div>
   </div>
+
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn" id="menu-toggle"><i class="fas fa-bars"></i></button>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h1 class="mt-4">Simple Sidebar</h1>
+      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
+        larger screens. When toggled using the button below, the menu will change.</p>
+      <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional,
+        and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the
+        menu when clicked.</p>
+  </div>
+ 
+</div>
