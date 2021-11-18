@@ -19,8 +19,31 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Usuario</a></li>
               <li><a class="dropdown-item disabled" href="#">Cliente</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Consultas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item disabled" href="#">Usuarios</a></li>
+              <li><a class="dropdown-item disabled" href="#">Clientes</a></li>
+              <li><a class="dropdown-item disabled" href="#">Proveedores</a></li>
+              <li><a class="dropdown-item" href="#">Productos</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Ventas</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reportes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item disabled" href="#">Ventas por Proveedor</a></li>
+              <li><a class="dropdown-item disabled" href="#">Ventas por Clientes</a></li>
+              <li><a class="dropdown-item disabled" href="#">....</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -30,11 +53,14 @@
             <a class="nav-link">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Salir</a>
+            <a class="nav-link">Salir</a>
           </li>
          
         </ul>
-        
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </nav>

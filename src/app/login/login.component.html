@@ -1,0 +1,88 @@
+
+<div class="col-md-12 text-center">
+    <p id="tit_ppal">TIENDA LA GENÉRICA</p>
+    <hr>
+  </div>
+  <div class="container d-flex flex-column">
+    <div class="row ">
+  
+      <div id="imagen" class="col-md-6 text-center p-5">
+        <img src="assets/pears.svg" alt="frutas" width="90%" />
+      </div>
+  
+      <div id="tabla" class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+  
+        <div class="d-table-cell align-middle">
+  
+          <div class="text-center">
+            <h1 class="sub_tit" id="bienvenido">Bienvenido</h1>
+          </div>
+  
+          <div class="text-center">
+            <h1 class="h2"></h1>
+            <p class="tit_3">Ingrese a su cuenta</p>
+          </div>
+  
+          <div class="card">
+            <div class="card-body">
+              <div class="m-sm-4">
+                <div class="text-center">
+                  <img src="assets/logo1.svg" alt="Tienda La Genérica" class="img-fluid rounded-circle" width="132"
+                    height="132" />
+                </div>
+  
+                <form class="login">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                    <input class="form-control form-control-lg" type="username" name="username"
+                      placeholder="Ingrese su usuario" [(ngModel)]="user">
+                  </div>
+  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-unlock"></i></span>
+                    <input class="form-control form-control-lg" type="password" name="password"
+                      placeholder="Ingrese su Contraseña" [(ngModel)]="pass">
+                  </div>
+                  <a href="index.html">Olvidó su contraseña?</a>
+                  <div>
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
+                      <span class="form-check-label">
+                        Recordarme
+                      </span>
+                    </label>
+  
+                  </div>
+                  <div class="text-center mt-3">
+                    <a class="ov-btn-grow-ellipse" (click)="comparar()" [routerLink]="'home'"> Ingresar</a>
+                    <br>
+                    <br>
+                    <br>
+
+                    <!--  ALTERNATIVA 2 DE BOTON  -->
+                    <a href="#" class="cta" (click)="comparar()" [routerLink]="'home'">
+                        <span>Ingresar</span>
+                        <svg width="13px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                      </a>
+  
+                    <!-- Alertas -->
+                    <div *ngIf="correcto==1" class="alert alert-success 
+                      animate__animated animate__bounce" role="alert">
+                      Acceso correcto, redirigiendo al sistema
+                    </div>
+                    <div *ngIf="correcto==0" class="alert alert-danger 
+                      animate__animated animate__bounce animate__delay-0.5s" role="alert">
+                      Usuario o contraseña incorrecta
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
