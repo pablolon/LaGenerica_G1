@@ -1,9 +1,18 @@
-li {
+nav {
+    font-family: 'Urbanist', sans-serif;
     background-color: #386641;
+
     font-size: 15px;
+
 }
 
-p {
-    font-family: 'Urbanist', sans-serif;
+
+
+#navbarDropdown {
     color: #F2E8CF;
+}
+
+.dropdown-menu {
+    background: #c6dfcb; /* Color al 25% */
+
 }

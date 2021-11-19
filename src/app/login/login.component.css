@@ -64,6 +64,7 @@ hr {
     transition: all 0.6s ease-out;
     transform: scale(1, 1);
     }
+
 a{
   color: #386641;
 }
@@ -73,3 +74,4 @@ form{
 .gen{
   background-color: #f2e8cf;
 }
+
