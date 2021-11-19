@@ -55,7 +55,8 @@
 
                 </div>
                 <div class="text-center mt-3">
-                  <a class="ov-btn-grow-ellipse" (click)="comparar()" [routerLink]="'home'"> Ingresar</a>
+                  <a class="ov-btn-grow-ellipse" (click)="comparar()" *ngIf="correcto!=1"> Validar</a>
+                  <a class="ov-btn-grow-ellipse" (click)="comparar()" [routerLink]="'home'" *ngIf="correcto==1"> Ingresar</a>
                   <br>
                   <br>
                   <br>
