@@ -1,17 +1,24 @@
 nav {
     font-family: 'Urbanist', sans-serif;
     background-color: #386641;
-
     font-size: 15px;
 
 }
 
 
 
-#navbarDropdown {
+#navbarDropdown, a {
     color: #F2E8CF;
 }
 
 .dropdown-menu {
-    background: #c6dfcb; /* Color al 25% */
+    background: #386641; /* Color al 25% */
+}
+
+.dropdown-item {
+    background: #386641; /* Color al 25% */
+}
+
+.nav-link :hover {
+    color:#F2E8CF;
 }

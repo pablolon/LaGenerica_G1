@@ -5,7 +5,7 @@
 #tit_ppal {
     color: #386641;
     font-family:'Urbanist';
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 900;
 }
 
@@ -71,7 +71,7 @@ a{
 form{
   color:#a7c957
 }
-.gen, .card{
+.card{
   background-color: #f2e8cf;
 }
 
