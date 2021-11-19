@@ -1,6 +1,4 @@
 <div class="row">
-
-
   <div class="md-2">
     <div class="d-flex" id="wrapper">
 
@@ -9,7 +7,7 @@
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
           <a class="col col-m-12 navbar-brand" [routerLink]="'/home'">
-            <img src="/assets/logo1.svg" width="50" height="50" class="d-inline-block" alt="">LA GENÉRICA </a>
+            <img src="/assets/logo1.svg" width="50" height="50" class="d-inline-block" alt="" [routerLink]="'home'">LA GENÉRICA </a>
         </nav>
 
         <div class="list-group list-group-flush">
@@ -40,6 +38,7 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
 
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
           <button class="btn" id="menu-toggle"><i class="fas fa-bars"></i></button>
 
@@ -49,15 +48,11 @@
           </button>
 
         </nav>
+        
+        <router-outlet></router-outlet>
       </div>
 
     </div>
   </div>
-  <div class="md-10">
-
-    <router-outlet></router-outlet>
-  </div>
-
-
-
+  <div class="md-10"></div>
 </div>
