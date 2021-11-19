@@ -1,49 +1,47 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <img src="assets/logo1.svg" alt="logo" width=50px>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon">   
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+      </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
+            <a class="nav-link" ></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
               Acceso
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Usuario</a></li>
-              <li><a class="dropdown-item disabled" href="#">Cliente</a></li>
-              
+            </p>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" >Usuario</a></li>
+              <li><a class="dropdown-item disabled" >Cliente</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Consultas
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item disabled" href="#">Usuarios</a></li>
-              <li><a class="dropdown-item disabled" href="#">Clientes</a></li>
-              <li><a class="dropdown-item disabled" href="#">Proveedores</a></li>
-              <li><a class="dropdown-item" href="#">Productos</a></li>
+              <li><a class="dropdown-item " [routerLink]="'usuario'">Usuarios</a></li>
+              <li><a class="dropdown-item " [routerLink]="'cliente'">Clientes</a></li>
+              <li><a class="dropdown-item disabled" [routerLink]="'proveedor'">Proveedores</a></li>
+              <li><a class="dropdown-item" [routerLink]="'producto'">Productos</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link">Ventas</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reportes
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item disabled" href="#">Ventas por Proveedor</a></li>
-              <li><a class="dropdown-item disabled" href="#">Ventas por Clientes</a></li>
-              <li><a class="dropdown-item disabled" href="#">....</a></li>
+              <li><a class="dropdown-item disabled" >Ventas por Proveedor</a></li>
+              <li><a class="dropdown-item disabled" >Ventas por Clientes</a></li>
+              <li><a class="dropdown-item disabled" >....</a></li>
             </ul>
           </li>
           <li class="nav-item">

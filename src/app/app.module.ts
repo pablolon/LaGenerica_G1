@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProductoComponent } from './producto/producto.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { VentaComponent } from './venta/venta.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 
@@ -27,7 +30,11 @@ import { DataTablesModule } from 'angular-datatables';
     LoginComponent,
     UsuarioComponent,
     ProveedorComponent,
-    ProductoComponent    
+    ProductoComponent,
+    ClienteComponent,
+    ReporteComponent,
+    ProductoComponent,
+    VentaComponent
   ],
   imports: [
     BrowserModule,
