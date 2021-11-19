@@ -131,3 +131,6 @@ hr {
       .cta:active {
         transform: scale(0.96);
       }
+.gen {
+  background-color: #F2E8CF;
+}

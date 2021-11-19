@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProductoComponent } from './producto/producto.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { VentaComponent } from './venta/venta.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ProductoComponent } from './producto/producto.component';
     LoginComponent,
     UsuarioComponent,
     ProveedorComponent,
-    ProductoComponent
+    ProductoComponent,
+    ClienteComponent,
+    ReporteComponent,
+    VentaComponent
   ],
   imports: [
     BrowserModule,
