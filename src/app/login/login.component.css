@@ -3,38 +3,38 @@
 }
 
 #tit_ppal {
-    color: rgb(36, 167, 29);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #386641;
+    font-family:'Urbanist';
     font-size: 70px;
     font-weight: 900;
 }
 
 .sub_tit {
-    color: rgb(36, 167, 29);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#386641;
+    font-family:'Urbanist';
     font-size: 40px;
     font-weight: 200;
 }
 .tit_3{
-    color: rgb(36, 167, 29);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #386641;
+    font-family:'Urbanist';
     font-size: 25px;
     font-weight: 200;
 }
 hr {
-    height: 6px;
-    color: rgb(36, 167, 29);
+    height: 5px;
+    color: #a7c957;
 }
 .btn {
-    background-color:cadetblue;
+    background-color:#a7c957;
     
 }
 
 /*** ESTILOS BOTÓN GROW ELLIPSE ***/
 .ov-btn-grow-ellipse {
-    background: #aaa; /* color de fondo */
-    color: #000; /* color de fuente */
-    border: 2px solid #aaa; /* tamaño y color de borde */
+    background: #a7c957; /* color de fondo */
+    color: #386641; /* color de fuente */
+    border: 2px solid #a7c957; /* tamaño y color de borde */
     padding: 16px 20px;
     border-radius: 30px; /* redondear bordes */
     position: relative;
@@ -65,72 +65,13 @@ hr {
     transform: scale(1, 1);
     }
 
-    /**  ESTILO BOTON 2 */
-
-    html, body {
-        height: 100%;
-      }
-      
-      body {
-        display: grid;
-        font-family: Avenir, sans-serif;
-        color: #111;
-      }
-      
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      
-      .cta {
-        position: relative;
-        margin: auto;
-        padding: 19px 22px;
-        transition: all 0.2s ease;
-      }
-      .cta:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        border-radius: 28px;
-        background: #085e24;
-        width: 56px;
-        height: 56px;
-        transition: all 0.3s ease;
-      }
-      .cta span {
-        position: relative;
-        font-size: 16px;
-        line-height: 18px;
-        font-weight: 900;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        vertical-align: middle;
-      }
-      .cta svg {
-        position: relative;
-        top: 0;
-        margin-left: 10px;
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke: #111;
-        stroke-width: 2;
-        transform: translateX(-5px);
-        transition: all 0.3s ease;
-      }
-      .cta:hover:before {
-        width: 100%;
-        background: #639876;
-      }
-      .cta:hover svg {
-        transform: translateX(0);
-      }
-      .cta:active {
-        transform: scale(0.96);
-      }
-.gen {
-  background-color: #F2E8CF;
+a{
+  color: #386641;
 }
+form{
+  color:#a7c957
+}
+.gen{
+  background-color: #f2e8cf;
+}
+
