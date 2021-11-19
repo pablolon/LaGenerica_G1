@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProductoComponent } from './producto/producto.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DataTablesModule } from 'angular-datatables';
+
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { ProductoComponent } from './producto/producto.component';
     LoginComponent,
     UsuarioComponent,
     ProveedorComponent,
-    ProductoComponent
+    ProductoComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    DataTablesModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

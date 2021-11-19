@@ -19,39 +19,41 @@
 
             <!-- CODE HERE -->
 
-            <!-- contenido  
+            <!-- contenido  -->
+            
+             <!-- Alertas -->
+             <div *ngIf="valida==0" class="alert alert-success 
+             animate__animated animate__bounce" role="alert">
+             Datos cargados con éxito.
+           </div>
+
+
+              <div class="text-center">
+                <input class="form-control" type="file" (change)="onChange($event)">
+            
+                <button (click)="onUpload()" class="btn btn-success">
+                  Upload
+                </button>
+                <button (click)="refresh()" class="btn btn-success" >
+                  Ver Tabla
+                </button>
+                
+                  
+               
+                
+                
+              </div>
+              <div class="container">
+                <h3 *ngFor="let dato of resultados; let i = index">
+                  
+                </h3>
+              </div>
 	
-	<div class="pb-3 pr-3 d-flex justify-content-end">
-		 <a href="producto.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-		 <i class="fas fa-download fa-sm text-white-50"></i> Nuevo Producto</a>
-		
-	</div>
-	-->
 
-            <div class="pb-3 pr-3 d-flex justify-content-end">
-              <a href="cargarProductos.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                <i class="fas fa-download fa-sm text-white-50"></i> Cargar Productos</a>
-
-            </div>
-
-            <!-- 
-	<div id="delete" class="d-none alert alert-danger" role="alert">
-		Producto eliminado correctamente
-	  </div>
-	  
-	  <div id="create" class="d-none alert alert-success" role="alert">
-		Producto creado correctamente
-	  </div>
-	  
-	  <div id="update" class="d-none alert alert-info" role="alert">
-		Producto modificado correctamente
-	  </div>
-	
-	 -->
 
             <!--  Aqui es donde se autogenera la tabla basado en el script -->
             <div class="col align-self-center">
-              <table class='data-table table stripe hover nowrap'>
+              <table class="compact nowrap table  table-hover" >
                 <thead>
                   <tr>
                     <th class='table-plus'>Código</th>
@@ -61,6 +63,15 @@
                     <th>Iva Compra</th>
                     <th>Precio de Venta</th>
 
+                  </tr>
+                  <tr *ngFor="let productos of contenido" class="">
+        
+                    <td>{{productos.codigoproducto}}</td>
+                    <td>{{productos.ivacompra}}</td>
+                    <td>{{productos.nitproveedor}}</td>
+                    <td>{{productos.nombreproducto}}</td>
+                    <td>{{productos.preciocompra}}</td>
+                    <td>{{productos.precioventa}}</td>
                   </tr>
                 </thead>
                 <tbody id="productosinfo">
