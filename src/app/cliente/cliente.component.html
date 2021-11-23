@@ -17,33 +17,43 @@
                 
                 <div class="form-group col-md-12">
                     <label for="cedula_cliente">Cédula</label>
+                    <!--
                     <input type="text" autocomplete="off" required name="cedula_cliente" class="form-control">
+                    -->
+                    <input class="form-control form-control-lg" type="text" name="cedula_cliente"
+                       [(ngModel)]="cedula_cliente" >
                 </div>
                 <div class="form-group col-md-12">
                     <label for="nombre_cliente">Nombre</label>
-                    <input type="text" autocomplete="off" required name="nombre_cliente" class="form-control">
+                    <input class="form-control form-control-lg" type="text" name="nombre_cliente"
+                       [(ngModel)]="nombre_cliente">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="direccion_cliente">Dirección</label>
-                    <input type="text" autocomplete="off" required  name="direccion_cliente" class="form-control">
+                    <input class="form-control form-control-lg" type="text" name="dir_cliente"
+                       [(ngModel)]="dir_cliente">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="email_cliente">Email</label>
-                    <input type="email" autocomplete="off" required name="email_cliente" class="form-control">
+                    <input class="form-control form-control-lg" type="text" name="correo_cliente"
+                    [(ngModel)]="correo_cliente">
+
                 </div>
                 <div class="form-group col-md-12">
                     <label for="telefono_cliente">Teléfono</label>
-                    <input type="text" autocomplete="off" required name="telefono_cliente" class="form-control">
+                    <input class="form-control form-control-lg" type="text" name="telefono_cliente"
+                    [(ngModel)]="telefono_cliente">
+                    
                 </div>
                 
                 <br>
 
-                <button  class="btn btn-success col-md-4 justify-content-center"style="margin: 10px">
+                <button  class="btn btn-success col-md-4 justify-content-center"style="margin: 10px" (click)="crear_cliente()" >
                 
                     Crear
                 </button>
                 
-                <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px">
+                <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px" (click)="buscar_cliente()">
                     Buscar
                 </button>
                 <button  class="btn btn-success col-md-4  justify-content-center"style="margin: 10px">
@@ -52,6 +62,7 @@
                 <button  class="btn btn-success col-md-4"style="margin: 10px ">
                     Eliminar
                 </button>
+
             </form>
                 
         </div>		
