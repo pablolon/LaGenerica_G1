@@ -14,7 +14,7 @@ export class ClienteComponent implements OnInit {
   }
 
   title = 'Clientes';
-  baseApiUrl = "http://localhost:8080/api/clientes";
+  baseApiUrl = "http://localhost:8080/api/cliente";
 
   cedula_cliente!:string;
   nombre_cliente!:string;
@@ -47,7 +47,7 @@ export class ClienteComponent implements OnInit {
       console.log(this.contenido);
     }); 
     this.nombre_cliente=this.res_get.nombreCompleto;
-    this.cedula_cliente=this.res_get.cedula;
+//    this.cedula_cliente=this.res_get.cedula; // no es necesario asignarla
     this.dir_cliente=this.res_get.direccion;
     this.telefono_cliente=this.res_get.telefono;
     this.correo_cliente=this.res_get.correo;  
