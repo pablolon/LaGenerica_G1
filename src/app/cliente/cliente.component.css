@@ -5,4 +5,19 @@ p {
     color: green;
     text-align: center;
 }
-
+form{
+    color:#386641;
+    font-family:"Urbanist";
+}
+.btn-primary{
+    color: #a7c957;
+}
+form {
+    /* Centrar el formulario en la página */
+    margin: 0 auto;
+    width: 400px;
+    /* Esquema del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
