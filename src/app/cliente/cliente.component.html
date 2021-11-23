@@ -1,36 +1,57 @@
 
+<br>
+<br>
+<br>
 <div class="col col-m-12">
     <div class="d-flex justify-content-center mb-5">
         <div class="col-5"> 
         
         <div id="error" class="d-none alert alert-danger"
                     role="alert">Cliente ya se encuentra registrado</div>
-    
-                    
+                    <div id="imagen" class="col-md-4 text-center p-4" >
+                        <br clear="left">
+                        <img src="assets/verdura.svg" alt="frutas" width="90%" style="float:left"/>
+                      </div>
+                          
             <form id="registrarcliente" action="../registrarcliente" method="post">
-                <div class="form-group">
+                
+                <div class="form-group col-md-12">
                     <label for="cedula_cliente">Cédula</label>
                     <input type="text" autocomplete="off" required name="cedula_cliente" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="nombre_cliente">Nombre</label>
                     <input type="text" autocomplete="off" required name="nombre_cliente" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="direccion_cliente">Dirección</label>
                     <input type="text" autocomplete="off" required  name="direccion_cliente" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="email_cliente">Email</label>
                     <input type="email" autocomplete="off" required name="email_cliente" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="telefono_cliente">Teléfono</label>
                     <input type="text" autocomplete="off" required name="telefono_cliente" class="form-control">
                 </div>
-                <div class="form-group mt-3">
-                    <input type="submit" value="Enviar" required class="btn btn-primary form-control">
-                </div>
+                
+                <br>
+
+                <button  class="btn btn-success col-md-4 justify-content-center"style="margin: 10px">
+                
+                    Crear
+                </button>
+                
+                <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px">
+                    Buscar
+                </button>
+                <button  class="btn btn-success col-md-4  justify-content-center"style="margin: 10px">
+                    Actualizar
+                </button>                    
+                <button  class="btn btn-success col-md-4"style="margin: 10px ">
+                    Eliminar
+                </button>
             </form>
                 
         </div>		
