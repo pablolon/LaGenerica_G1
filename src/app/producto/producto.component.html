@@ -16,6 +16,13 @@
              animate__animated animate__bounce" role="alert">
               Datos cargados con éxito.
             </div>
+            <div *ngIf="valida!=0" class="alert alert-danger 
+             animate__animated animate__bounce" role="alert">
+              error.
+            </div>
+
+
+
 
             <div class="text-center">
               <input class="form-control" type="file" (change)="onChange($event)">
@@ -30,18 +37,19 @@
             </div>
             <div class="container">
               <h3 *ngFor="let dato of resultados; let i = index"></h3>
+              
             </div>
             <!--  Aqui es donde se autogenera la tabla basado en el script -->
             <div class="col align-self-center">
               <br>
-              <table class="compact nowrap table  table-hover">
+              <table class="table table-success table-striped">
                 <thead>
                   <tr>
-                    <th class='table-plus'>Código</th>
+                    <th>Código</th>
+                    <th>Iva Compra</th>
                     <th>Nit Proveedor</th>
                     <th>Nombre del Producto</th>
-                    <th>Precio de Compra</th>
-                    <th>Iva Compra</th>
+                    <th>Precio de Compra</th>                    
                     <th>Precio de Venta</th>
 
                   </tr>
