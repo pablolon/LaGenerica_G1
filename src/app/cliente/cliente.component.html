@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-<div class="col col-m-12">
+<div class="col col-m-12 ms-5">
     <div class="d-flex justify-content-center mb-5">
         <div class="col-5"> 
         
@@ -13,7 +13,7 @@
                         <img src="assets/verdura.svg" alt="frutas" width="90%" style="float:left"/>
                       </div>
                           
-            <form id="registrarcliente" action="../registrarcliente" method="post">
+            
                 
                 <div class="form-group col-md-12">
                     <label for="cedula_cliente">Cédula</label>
@@ -21,12 +21,12 @@
                     <input type="text" autocomplete="off" required name="cedula_cliente" class="form-control">
                     -->
                     <input class="form-control form-control-lg" type="text" name="cedula_cliente"
-                       [(ngModel)]="cedula_cliente" >
+                       [(ngModel)]="cedula_cliente"  [value]="cedula_cliente" >
                 </div>
                 <div class="form-group col-md-12">
                     <label for="nombre_cliente">Nombre</label>
                     <input class="form-control form-control-lg" type="text" name="nombre_cliente"
-                       [(ngModel)]="nombre_cliente">
+                       [(ngModel)]="nombre_cliente" >
                 </div>
                 <div class="form-group col-md-12">
                     <label for="direccion_cliente">Dirección</label>
@@ -56,16 +56,40 @@
                 <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px" (click)="buscar_cliente()">
                     Buscar
                 </button>
-                <button  class="btn btn-success col-md-4  justify-content-center"style="margin: 10px">
+                <button  class="btn btn-success col-md-4  justify-content-center"style="margin: 10px" (click)="actualizar_cliente()">
                     Actualizar
                 </button>                    
-                <button  class="btn btn-success col-md-4"style="margin: 10px ">
+                <button  class="btn btn-success col-md-4"style="margin: 10px " (click)="eliminar_cliente()">
                     Eliminar
                 </button>
 
-            </form>
+            
                 
-        </div>		
+        </div>	
+        <div class="col align-self-center">
+            <br>
+            <table class="compact nowrap table  table-hover">
+              <thead>
+                <tr>
+                  <th class='table-plus'>Nombre</th>
+                  <th>Direccion</th>
+                  <th>Telefono</th>
+                  <th>correo</th>
+                  
+
+                </tr>
+                <tr *ngFor="let clientes of contenido" class="">
+
+                  <td>{{clientes.nombreCompleto}}</td>
+                  <td>{{clientes.direccion}}</td>
+                  <td>{{clientes.telefono}}</td>
+                  <td>{{clientes.correo}}</td>
+                  
+                </tr>
+              </thead>
+              
+            </table>
+          </div>	
     </div>
    
 </div>
