@@ -11,21 +11,22 @@
               <h1>PRODUCTOS</h1>
               <hr>
             </div>
-            <!-- Alertas -->
-            <div *ngIf="valida==0" class="alert alert-success 
-             animate__animated animate__bounce" role="alert">
-              Datos cargados con éxito.
-            </div>
-            <div *ngIf="valida!=0" class="alert alert-danger 
-             animate__animated animate__bounce" role="alert">
-              error.
-            </div>
+                        <!-- Alertas -->
+                        <div *ngIf="valida==0" class="alert alert-success 
+                        animate__animated animate__bounce" role="alert">
+                         Datos cargados con éxito.
+                       </div>
+                       <div *ngIf="archivo==0" class="alert 0.
+                       alert-danger
+                        animate__animated animate__bounce" role="alert">
+                         Error al seleccionar archivo.
+                       </div>
 
 
 
 
             <div class="text-center">
-              <input class="form-control" type="file" (change)="onChange($event)">
+              <input class="form-control" type="file" accept=".csv" (change)="onChange($event)">
               <br>
 
               <button (click)="onUpload()" class="btn btn-success">
@@ -37,7 +38,7 @@
             </div>
             <div class="container">
               <h3 *ngFor="let dato of resultados; let i = index"></h3>
-              
+                           
             </div>
             <!--  Aqui es donde se autogenera la tabla basado en el script -->
             <div class="col align-self-center">
