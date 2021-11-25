@@ -111,7 +111,7 @@ export class ProductoComponent implements OnInit {
   ///////////////// POST /////////////////////////////
   codigoRespuesta: number = 0;
   res2: any;
-
+ 
   //lista que almacenara los resultados de la insercion de cada linea
   resultados: any;
 
@@ -122,9 +122,40 @@ export class ProductoComponent implements OnInit {
   recibido: boolean = false;
 
   // En caso de seleccionar archivo, escojer el primer archivo
+  /*onChange(event: any) {
+    if(event.target.files[0]){
+      this.archivo=1;
+
+    }if(event.target.files[''] ){
+      this.archivo=0;
+
+    }
+    //this.file = event.target.files[0];
+    //console.log(this.file);
+  }
+  */
+
+  archivo:number=-1;
+  // En caso de seleccionar archivo, escojer el primer archivo
   onChange(event: any) {
     this.file = event.target.files[0];
+    let nombarc = this.file.name;
+    console.log(nombarc);
+    if(event.target.files[0]){
+      let extension;
+      extension = nombarc.substring(nombarc.lastIndexOf('.')+1).toLowerCase();
+      console.log(extension);
+      if(extension == 'csv'){
+        this.archivo = 1;
+      }else{
+        this.archivo = 0;
+      }
+    }else{
+      this.archivo = 0;
+    }
   }
+
+
 
   valida:number=-1;
 
@@ -137,7 +168,8 @@ export class ProductoComponent implements OnInit {
     this.resultados = await this.fileUploadService.upload(this.file);
     console.log(this.resultados);
     //window.location.reload();
-    this.valida=0;    
+    this.valida=0;   
+    console.log(this.resultados.status);
 
   }
 
