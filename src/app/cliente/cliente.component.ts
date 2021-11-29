@@ -12,6 +12,18 @@ export class ClienteComponent implements OnInit {
   constructor(private objetohttp:HttpClient) { }
 
   ngOnInit(): void {
+
+    this.res_get=this.objetohttp.get(this.baseApiUrl);
+    this.res_get.subscribe((data:any[])=>{
+    this.contenido=data;
+      console.log(this.contenido);
+    this.cedula_cliente=this.contenido[0].cedula;
+    this.nombre_cliente = this.contenido[0].nombreCompleto;
+    this.dir_cliente=this.contenido[0].direccion;
+    this.telefono_cliente=this.contenido[0].telefono;
+    this.correo_cliente=this.contenido[0].correo;
+    });
+    
   }
 
   title = 'Clientes';
@@ -87,4 +99,10 @@ export class ClienteComponent implements OnInit {
       });    
   }
 
+  refresh(): void {
+    window.location.reload();
 }
+}
+
+
+

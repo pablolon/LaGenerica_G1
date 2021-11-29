@@ -1,3 +1,25 @@
-.producto {
-    height:100%;
+p {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    color: #386641;
+    text-align: center;
+}
+
+#imagen {
+    height: 200px;
+    align-items: center;
+    padding: 20px;
+}
+
+button {
+    background: #386641;;
+}
+
+.form-control {
+    background: #386641;
+    color: #f2e8cf;
+}
+table {
+    margin-left: 20px;
 }
