@@ -29,7 +29,26 @@ form {
 
   button{
       background-color: #386641;
+      color: #f2e8cf;
   }
   i{
       color: #386641;
   }
+
+th{
+    background: #386641;
+    color:  #f2e8cf;
+}
+td{
+    color: #386641;
+}
+
+input{
+    color:  #386641;
+    border-radius: 15px;
+    border-color: #386641;
+}
+
+button {
+    border-radius: 15px;
+}
