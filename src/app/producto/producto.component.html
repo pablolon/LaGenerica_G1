@@ -1,79 +1,74 @@
  <div class="producto">
- <div id="wrapper">
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-      <!-- Main Content -->
-      <div id="content">
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <div class="text-center">
-            <div class="mb-5">
-              <h1>PRODUCTOS</h1>
-              <hr>
-            </div>
-                        <!-- Alertas -->
-                        <div *ngIf="valida==0" class="alert alert-success 
+   <div id="wrapper">
+     <!-- Content Wrapper -->
+     <div id="content-wrapper" class="d-flex flex-column">
+       <!-- Main Content -->
+       <div id="content">
+         <!-- Begin Page Content -->
+         <div class="container-fluid">
+           <div class="text-center">
+             <div class="col col-m-12">
+               <p>PRODUCTOS</p>
+
+               <hr>
+               <div class="col col-m-12 text-center"><img id="imagen" src="assets/verdura.svg" alt="frutas">
+               </div>
+             </div>
+             <!-- Alertas -->
+             <div *ngIf="valida==0" class="alert alert-success 
                         animate__animated animate__bounce" role="alert">
-                         Datos cargados con éxito.
-                       </div>
-                       <div *ngIf="archivo==0" class="alert 0.
+               Datos cargados con éxito.
+             </div>
+             <div *ngIf="archivo==0" class="alert 0.
                        alert-danger
                         animate__animated animate__bounce" role="alert">
-                         Error al seleccionar archivo.
-                       </div>
-
-
-
-
-            <div class="text-center">
-              <input class="form-control" type="file" accept=".csv" (change)="onChange($event)">
+               Error al seleccionar archivo.
+             </div>
+             <div class=" col col-md-12">
+               <input class="form-control" type="file" accept=".csv" (change)="onChange($event)">
               <br>
+               <button (click)="onUpload()" class="btn btn-success">Cargar Archivo</button>
+               <button (click)="refresh()" class="btn btn-success">Ver Tabla</button>
 
-              <button (click)="onUpload()" class="btn btn-success">
-                Cargar Archivo
-              </button>
-              <button (click)="refresh()" class="btn btn-success">
-                Ver Tabla
-              </button>
-            </div>
-            <div class="container">
-              <h3 *ngFor="let dato of resultados; let i = index"></h3>
-                           
-            </div>
-            <!--  Aqui es donde se autogenera la tabla basado en el script -->
-            <div class="col align-self-center">
-              <br>
-              <table class="table table-success table-striped">
-                <thead>
-                  <tr>
-                    <th>Código</th>
-                    <th>Iva Compra</th>
-                    <th>Nit Proveedor</th>
-                    <th>Nombre del Producto</th>
-                    <th>Precio de Compra</th>                    
-                    <th>Precio de Venta</th>
+             </div>
+           </div>
+           <div class="container">
+             <h3 *ngFor="let dato of resultados; let i = index"></h3>
 
-                  </tr>
-                  <tr *ngFor="let productos of contenido" class="">
+           </div>
+           <!--  Aqui es donde se autogenera la tabla basado en el script -->
+           <div class="col align-self-center">
+             <br>
+             <table class="table table-success table-striped">
+               <thead>
+                 <tr>
+                   <th>Código</th>
+                   <th>Iva Compra</th>
+                   <th>Nit Proveedor</th>
+                   <th>Nombre del Producto</th>
+                   <th>Precio de Compra</th>
+                   <th>Precio de Venta</th>
 
-                    <td>{{productos.codigoproducto}}</td>
-                    <td>{{productos.ivacompra}}</td>
-                    <td>{{productos.nitproveedor}}</td>
-                    <td>{{productos.nombreproducto}}</td>
-                    <td>{{productos.preciocompra}}</td>
-                    <td>{{productos.precioventa}}</td>
-                  </tr>
-                </thead>
-                <tbody id="productosinfo">
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-- END CODE HERE -->
-        </div>
-        <!-- /.container-fluid -->
-      </div>
-      <!-- End of Main Content -->
-    </div>
-  </div>
+                 </tr>
+                 <tr *ngFor="let productos of contenido" class="">
+
+                   <td>{{productos.codigoproducto}}</td>
+                   <td>{{productos.ivacompra}}</td>
+                   <td>{{productos.nitproveedor}}</td>
+                   <td>{{productos.nombreproducto}}</td>
+                   <td>{{productos.preciocompra}}</td>
+                   <td>{{productos.precioventa}}</td>
+                 </tr>
+               </thead>
+               <tbody id="productosinfo">
+               </tbody>
+             </table>
+           </div>
+         </div>
+         <!-- END CODE HERE -->
+       </div>
+       <!-- /.container-fluid -->
+     </div>
+     <!-- End of Main Content -->
+   </div>
  </div>
