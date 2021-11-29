@@ -11,6 +11,8 @@ export class ClienteComponent implements OnInit {
 
   constructor(private objetohttp:HttpClient) { }
 
+  
+
   ngOnInit(): void {
 
     this.res_get=this.objetohttp.get(this.baseApiUrl);
@@ -39,20 +41,29 @@ export class ClienteComponent implements OnInit {
   contenido:any;
   encontro_cliente:number=-1;
 
+  crea: number=-1;
   crear_cliente(){
-    this.objetohttp.post<any>(
+      
+      this.objetohttp.post<any>(
       this.baseApiUrl,
+      
       {
         cedula: this.cedula_cliente,
         nombreCompleto: this.nombre_cliente,
         direccion: this.dir_cliente,
         telefono: this.telefono_cliente,
-        correo:this.correo_cliente
+        correo:this.correo_cliente        
+        
       },{observe: 'response'}).subscribe(response=>{
         this.codigorespuesta=response.status;
+        this.crea=0;
+        this.elimina=-1;
+        this.actualiza=-1;
+        this.encuentra=-1;
+        
       });    
   }
-
+  encuentra: number=-1;
   buscar_cliente(){
 
      
@@ -65,16 +76,25 @@ export class ClienteComponent implements OnInit {
     this.dir_cliente=this.contenido[0].direccion;
     this.telefono_cliente=this.contenido[0].telefono;
     this.correo_cliente=this.contenido[0].correo;
+    this.crea=-1;
+    this.elimina=-1;
+    this.actualiza=-1;
+    this.encuentra=0;
     }); 
       
     
   }
-
+  elimina:number=-1;
   eliminar_cliente(){
 
     //this.res_get = this.objetohttp.delete(this.urlapiGET).subscribe();
     this.objetohttp.delete(this.baseApiUrl+"/"+this.cedula_cliente).subscribe();
     console.log(this.res_get);
+    this.elimina=0;
+    this.crea=-1;
+    
+    this.actualiza=-1;
+    this.encuentra=-1;
     //this.res_get.subscribe((data:any[])=>{
      // this.contenido=data;
       //console.log(this.contenido);
@@ -85,7 +105,7 @@ export class ClienteComponent implements OnInit {
     //this.telefono_cliente=this.res_get.telefono;
    // this.correo_cliente=this.res_get.correo
 
-
+   actualiza:number=-1;
    actualizar_cliente(){
     this.objetohttp.put<any>(this.baseApiUrl+"/"+this.cedula_cliente,
       {
@@ -96,6 +116,11 @@ export class ClienteComponent implements OnInit {
         correo:this.correo_cliente
       },{observe: 'response'}).subscribe(response=>{
         this.codigorespuesta=response.status;
+        this.actualiza=0;
+        this.crea=-1;
+        this.elimina=-1;
+        
+        this.encuentra=-1;
       });    
   }
 
