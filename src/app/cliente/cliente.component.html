@@ -6,12 +6,33 @@
   <div class="col col-m-12 text-center"><img id="imagen" src="assets/verdura.svg" alt="frutas">
   </div>
 
+  <!-- Alertas -->
+  <div *ngIf="crea==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Cliente creado con éxito.
+  </div>
+
+  <div *ngIf="encuentra==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Cliente encontrado con éxito.
+  </div>
+
+  <div *ngIf="actualiza==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Cliente actualizado con éxito.
+  </div>
+
+  <div *ngIf="elimina==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Cliente eliminado con éxito.
+  </div>
+
 
   <div class="d-flex justify-content-center mb-5">
     <div class="col-md-4">
 
       <div id="error" class="d-none alert alert-danger" role="alert">Cliente ya se encuentra registrado</div>
-
+      
 
 
 
@@ -58,6 +79,9 @@
       </button>
       <button class="btn btn-success col-md-4" style="margin: 10px " (click)="eliminar_cliente()">
         Eliminar
+      </button>
+      <button class="btn btn-success col-md-4" style="margin: 10px " (click)="refresh()">
+        Listar clientes
       </button>
 
 
