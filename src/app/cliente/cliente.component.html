@@ -8,7 +8,7 @@
 
 
   <div class="d-flex justify-content-center mb-5">
-    <div class="col-5">
+    <div class="col-md-4">
 
       <div id="error" class="d-none alert alert-danger" role="alert">Cliente ya se encuentra registrado</div>
 
@@ -63,19 +63,21 @@
 
 
     </div>
-    <div class="col align-self-center">
+    <div class="col col-md-1"></div>
+    <div class="col align-self-center ">
       <br>
-      <table class="compact nowrap table  table-hover">
+      <table class="table table-hover">
         <thead>
           <tr>
-            <th class='table-plus'>Documento</th>
+            <th class="table-plus">Documento</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Correo</th>
+            <!--
             <th>Editar</th>
             <th>Eliminar</th>
-
+                  -->
 
           </tr>
           <tr *ngFor="let clientes of contenido" class="">
@@ -85,8 +87,10 @@
             <td>{{clientes.direccion}}</td>
             <td>{{clientes.telefono}}</td>
             <td>{{clientes.correo}}</td>
+            <!--
             <td><i class="fas fa-pencil-alt" [routerLink]="'/home'"></i></td>
             <td><i class="fas fa-trash" (click)=eliminar_cliente()></i></td>
+              -->
 
           </tr>
         </thead>

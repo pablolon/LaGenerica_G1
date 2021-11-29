@@ -10,7 +10,7 @@ import { FileUploadService } from './file-upload.service';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent implements OnInit { 
+export class ProductoComponent implements OnInit {
 
   dtOptions: { pagingType: string; columns: { title: string; }[]; pageLength: number; responsive: boolean; language: { processing: string; search: string; lengthMenu: string; info: string; infoEmpty: string; infoFiltered: string; infoPostFix: string; loadingRecords: string; zeroRecords: string; emptyTable: string; paginate: { first: string; previous: string; next: string; last: string; }; aria: { sortAscending: string; sortDescending: string; }; }; } | undefined;
 
@@ -54,7 +54,7 @@ export class ProductoComponent implements OnInit {
   ///////////////// METODOS ANGULAR /////////////////////////////
 
   //FUNCIÓN DE EJECUCIÓN ANTES DE LA CARGA DE LA PAGINA
-  ngOnInit(): void { 
+  ngOnInit(): void {
     //utilizando el servicio en la url
     this.res = this.objetohttp.get(this.urlapiGET).pipe(catchError(this.handleError));
 
@@ -76,7 +76,7 @@ export class ProductoComponent implements OnInit {
         title: 'nitproveedor',
       }, {
         title: 'nombreproducto',
-      }, { 
+      }, {
         title: 'preciocompra',
       }, {
         title: 'precioventa'
@@ -111,7 +111,7 @@ export class ProductoComponent implements OnInit {
   ///////////////// POST /////////////////////////////
   codigoRespuesta: number = 0;
   res2: any;
- 
+
   //lista que almacenara los resultados de la insercion de cada linea
   resultados: any;
 
@@ -135,50 +135,42 @@ export class ProductoComponent implements OnInit {
   }
   */
 
-  archivo:number=-1;
+  archivo: number = -1;
   // En caso de seleccionar archivo, escojer el primer archivo
   onChange(event: any) {
     this.file = event.target.files[0];
     let nombarc = this.file.name;
     console.log(nombarc);
-    if(event.target.files[0]){
+    if (event.target.files[0]) {
       let extension;
-      extension = nombarc.substring(nombarc.lastIndexOf('.')+1).toLowerCase();
+      extension = nombarc.substring(nombarc.lastIndexOf('.') + 1).toLowerCase();
       console.log(extension);
-      if(extension == 'csv'){
+      if (extension == 'csv') {
         this.archivo = 1;
-      }else{
+      } else {
         this.archivo = 0;
       }
-    }else{
+    } else {
       this.archivo = 0;
     }
   }
 
-
-
-  valida:number=-1;
-
-
+  valida: number = -1;
 
   // Cuando haga click, iniciar proceso de envio
-  async onUpload() { 
-    this.res = this.objetohttp.delete(this.urlapiGET).subscribe();   
+  async onUpload() {
+    this.res = this.objetohttp.delete(this.urlapiGET).subscribe();
     console.log(this.res);
     this.resultados = await this.fileUploadService.upload(this.file);
     console.log(this.resultados);
     //window.location.reload();
-    this.valida=0;   
+    this.valida = 0;
     console.log(this.resultados.status);
 
   }
 
-
-
   refresh(): void {
     window.location.reload();
-}
-
-
+  }
 
 }
