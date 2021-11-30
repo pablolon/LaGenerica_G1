@@ -68,18 +68,33 @@ export class ClienteComponent implements OnInit {
 
      
     this.res_get=this.objetohttp.get(this.baseApiUrl+"?cedula="+this.cedula_cliente);
+    //this.res_get=this.objetohttp.get(this.baseApiUrl+"/"+this.cedula_cliente);
     this.res_get.subscribe((data:any[])=>{
       this.contenido=data;
+
+      console.log("uscarndo cliente");
       console.log(this.contenido);
+      if(this.contenido==null){
+        this.encuentra=1;
+        this.nombre_cliente="";
+        //    this.cedula_cliente=this.res_get.cedula; // no es necesario asignarla
+            this.dir_cliente="";
+            this.telefono_cliente="";
+            this.correo_cliente="";
+      }else{
+        //this.nombre_cliente=this.contenido[0].nombreCompleto;
       this.nombre_cliente=this.contenido[0].nombreCompleto;
-//    this.cedula_cliente=this.res_get.cedula; // no es necesario asignarla
-    this.dir_cliente=this.contenido[0].direccion;
-    this.telefono_cliente=this.contenido[0].telefono;
-    this.correo_cliente=this.contenido[0].correo;
-    this.crea=-1;
-    this.elimina=-1;
-    this.actualiza=-1;
-    this.encuentra=0;
+      //    this.cedula_cliente=this.res_get.cedula; // no es necesario asignarla
+          this.dir_cliente=this.contenido[0].direccion;
+          this.telefono_cliente=this.contenido[0].telefono;
+          this.correo_cliente=this.contenido[0].correo;
+          this.crea=-1;
+          this.elimina=-1;
+          this.actualiza=-1;
+          this.encuentra=0;
+
+      }
+      
     }); 
       
     

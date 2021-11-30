@@ -17,6 +17,11 @@
     Cliente encontrado con éxito.
   </div>
 
+  <div *ngIf="encuentra==1" class="alert alert-danger
+    animate__animated animate__bounce" role="alert">
+    Cliente no existe.
+  </div>
+
   <div *ngIf="actualiza==0" class="alert alert-success 
     animate__animated animate__bounce" role="alert">
     Cliente actualizado con éxito.
