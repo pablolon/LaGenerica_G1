@@ -72,7 +72,7 @@ export class ClienteComponent implements OnInit {
     this.res_get.subscribe((data:any[])=>{
       this.contenido=data;
 
-      console.log("uscarndo cliente");
+      console.log("Buscando cliente");
       console.log(this.contenido);
       if(this.contenido==null){
         this.encuentra=1;
