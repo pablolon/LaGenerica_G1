@@ -11,24 +11,27 @@
 							</h1>
 
 							<form>
-								<div class="col-xl-8 col-lg-4 col-md-8 col-sm-8">
-									<div class="input-group input-group-lg mb-3">
+						
+								<div class="container">
+									<div class="consecutivo">
+									  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 input-group input-group-lg mb-3">
 										<span class="input-group-text" id="basic-addon1">Consecutivo</span>
-										<input type="text" class="form-control" readonly="readonly"
-											id="consecutivo">
-
-									<div class="col col-md-6 dropdown d-flex align-items-end flex-column">
-										<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-										  Ciudad
-										</button>
-										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-										  <li><a class="dropdown-item">Bogotá</a></li>
-										  <li><a class="dropdown-item">Cali</a></li>
-										  <li><a class="dropdown-item">Medellín</a></li>
-										</ul>
+										<input type="text" class="form-control" readonly="readonly" id="consecutivo">
 									  </div>
-								</div>
-								</div>
+									</div>
+									<div class="intermedio">
+									</div>
+									  <div class="ciudad">
+										<select class="selector" aria-label="Selleccionar Ciudad">
+										  <option selected>Seleccione la ciudad</option>
+										  <option value="1">Bogotá</option>
+										  <option value="2">Cali</option>
+										  <option value="3">Medellín</option>
+										</select>
+									  </div>
+									  <div id="clear"></div>
+								  </div>
+							
 								<h3>Datos del cliente</h3>
 								<div class="row ">
 									<div class="col-xl-3 col-lg-4 col-md-4 col-sm-5">
