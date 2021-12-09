@@ -1,0 +1,35 @@
+.container-fluid {
+    font-family: 'Urbanist', sans-serif;
+}
+
+.container {
+    padding: 50px;
+    width: 100%;
+    margin: auto;
+}
+.ciudad {
+    width: 40%;
+    float: left;
+    height: 50px;
+
+
+}
+.intermedio {
+    width: 20%;
+    float: left;
+    height: 50px;
+}
+.consecutivo {
+    width: 40%;
+    float: left;
+    height: 50px;
+}
+#clear {
+    clear: both;
+}
+.selector {
+    background-color: rgb(238, 238, 238);
+    border-color: rgb(203, 203, 203);
+    width:100%;
+    heigh:100%;
+}

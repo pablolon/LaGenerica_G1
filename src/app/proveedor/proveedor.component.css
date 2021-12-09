@@ -5,3 +5,16 @@ p {
     color: green;
     text-align: center;
 }
+label{
+    color: darkgreen;
+    background: transparent;
+    text-align: left;
+}
+.tit{
+    text-align: left;
+    font-size: 20px;
+    background: lightcoral;
+}
+.form-group {
+    text-align: left;
+}

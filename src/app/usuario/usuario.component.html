@@ -1,5 +1,109 @@
-<div align="center">
-  <p>*** USUARIO ***</p>
-  <br>
-  <img src="./assets/Under-Construction.jpg">
+<div class="col col-m-12 ms-5">
+  <div class="col col-m-12">
+    <p>USUARIOS</p>
   </div>
+  <hr>
+  <div class="col col-m-12 text-center"><img id="imagen" src="assets/verdura.svg" alt="frutas">
+  </div>
+
+  <!-- Alertas -->
+  <div *ngIf="crea==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Usuario creado con éxito.
+  </div>
+
+  <div *ngIf="encuentra==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Usuario encontrado con éxito.
+  </div>
+
+  <div *ngIf="encuentra==1" class="alert alert-danger
+    animate__animated animate__bounce" role="alert">
+    Usuario no existe.
+  </div>
+
+  <div *ngIf="actualiza==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Usuario actualizado con éxito.
+  </div>
+
+  <div *ngIf="elimina==0" class="alert alert-success 
+    animate__animated animate__bounce" role="alert">
+    Usuario eliminado con éxito.
+  </div>
+
+
+  <div class="d-flex justify-content-center mb-5">
+    <div class="col-md-4">
+
+      <div id="error" class="d-none alert alert-danger" role="alert">usuario ya se encuentra registrado</div>
+      
+
+
+      <div class="form-group col-md-12">
+        <label for="usuario_usuario">Usuario</label>
+        <input class="form-control form-control-lg" type="text" name="usuario_usuario" [(ngModel)]="usuario_usuario">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="nombre_usuario">Nombre Completo</label>
+        <input class="form-control form-control-lg" type="text" name="nombre_usuario" [(ngModel)]="nombre_usuario">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="correo_usuario">E-mail</label>
+        <input class="form-control form-control-lg" type="text" name="correo_usuario" [(ngModel)]="correo_usuario">
+
+      </div>
+      <div class="form-group col-md-12">
+        <label for="password_usuario">Contraseña</label>
+        <input class="form-control form-control-lg" type="text" name="password_usuario" [(ngModel)]="password_usuario">
+
+      </div>
+
+      <br>
+
+      <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px" (click)="crear_usuario()">
+
+        Crear
+      </button>
+
+      <button class="btn btn-success col-md-4 justify-content-center" style="margin: 10px" (click)="buscar_usuario()">
+        Buscar
+      </button>
+      <button class="btn btn-success col-md-4  justify-content-center" style="margin: 10px"
+        (click)="actualizar_usuario()">
+        Actualizar
+      </button>
+      <button class="btn btn-success col-md-4" style="margin: 10px " (click)="eliminar_usuario()">
+        Eliminar
+      </button>
+      <button class="btn btn-success col-md-4" style="margin: 10px " (click)="refresh()">
+        Listar usuarios
+      </button>
+
+
+
+    </div>
+    <div class="col col-md-1"></div>
+    <div class="col align-self-center ">
+      <br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="table-plus">Usuario</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+          </tr>
+
+          <tr *ngFor="let usuarios of contenido" class="">
+            <td>{{usuarios.username}}</td>
+            <td>{{usuarios.nombrecompleto}}</td>
+            <td>{{usuarios.email}}</td>
+            <td>{{usuarios.password}}</td>
+            </tr>
+        </thead>
+
+      </table>
+    </div>
+  </div>
+</div>
