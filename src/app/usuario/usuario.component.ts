@@ -26,7 +26,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   title = 'usuarios';
-  baseApiUrl = "http://localhost:8080/api/usuarios";
+  baseApiUrl = "http://localhost:8080/api/usuario";
 
   nombre_usuario!:string;
   password_usuario!:string;
@@ -63,7 +63,7 @@ export class UsuarioComponent implements OnInit {
   buscar_usuario(){
 
      
-    this.res_get=this.objetohttp.get(this.baseApiUrl+"?usuario="+this.usuario_usuario);
+    this.res_get=this.objetohttp.get(this.baseApiUrl+"?username="+this.usuario_usuario);
     //this.res_get=this.objetohttp.get(this.baseApiUrl+"/"+this.cedula_usuario);
     this.res_get.subscribe((data:any[])=>{
       this.contenido=data;
@@ -111,9 +111,10 @@ export class UsuarioComponent implements OnInit {
    actualizar_usuario(){
     this.objetohttp.put<any>(this.baseApiUrl+"/"+this.usuario_usuario,
       {
+        username: this.usuario_usuario,
         nombrecompleto: this.nombre_usuario,
         password: this.password_usuario,
-        correo: this.correo_usuario,
+        email: this.correo_usuario,
        },{observe: 'response'}).subscribe(response=>{
         this.codigorespuesta=response.status;
         this.actualiza=0;
