@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
-import { UsuarioComponent } from './usuario/usuario.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -20,6 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { NuevoclienteComponent } from './cliente/nuevocliente/nuevocliente.component';
 import { EditarclienteComponent } from './cliente/editarcliente/editarcliente.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 @NgModule({
