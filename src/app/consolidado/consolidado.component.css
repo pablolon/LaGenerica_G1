@@ -52,3 +52,7 @@ input{
 button {
     border-radius: 15px;
 }
+
+.tit {
+    text-align: center;
+}

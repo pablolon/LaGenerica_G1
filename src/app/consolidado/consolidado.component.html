@@ -1,0 +1,27 @@
+<div class="col col-m-12">
+    <p>CANTIDAD DE VENTAS POR CIUDAD</p>
+  </div>
+  
+  
+  <div class="col col-md-1"></div>
+      <div class="col align-self-center ">
+        <br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="table-plus">Ciudad</th>
+              <th>Cantidad de Ventas</th>
+                       
+  
+            </tr>
+            <tr *ngFor="let consolidado of contenido" class="">
+  
+              <td>{{consolidado.ciudad}}</td>
+              <td>{{consolidado.totalventas}}</td>
+                           
+            </tr>
+          </thead>
+  
+        </table>
+      </div>
+
