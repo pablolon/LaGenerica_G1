@@ -22,7 +22,7 @@ import { NuevoclienteComponent } from './cliente/nuevocliente/nuevocliente.compo
 import { EditarclienteComponent } from './cliente/editarcliente/editarcliente.component';
 import { ListarclienteComponent } from './listarcliente/listarcliente.component';
 import { ConsolidadoComponent } from './consolidado/consolidado.component';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { ConsolidadoComponent } from './consolidado/consolidado.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
