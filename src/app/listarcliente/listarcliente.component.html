@@ -1,0 +1,32 @@
+<div class="col col-m-12">
+    <p>LISTADO DE CLIENTES</p>
+  </div>
+  
+  
+  <div class="col col-md-1"></div>
+      <div class="col align-self-center ">
+        <br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="table-plus">Documento</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+              
+  
+            </tr>
+            <tr *ngFor="let clientes of contenido" class="">
+  
+              <td>{{clientes.cedula}}</td>
+              <td>{{clientes.nombreCompleto}}</td>
+              <td>{{clientes.direccion}}</td>
+              <td>{{clientes.telefono}}</td>
+              <td>{{clientes.correo}}</td>
+              
+            </tr>
+          </thead>
+  
+        </table>
+      </div>

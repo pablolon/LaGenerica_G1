@@ -1,3 +1,19 @@
+p {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    color: #386641;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #386641;
+    text-align: center;
+}
+
 .container-fluid {
     font-family: 'Urbanist', sans-serif;
 }
@@ -33,3 +49,37 @@
     width:100%;
     heigh:100%;
 }
+#subtitulo {
+    padding-top: 30px;
+}
+
+#basic-addon1, .form-control, #consecutivo {
+    font-family: 'Urbanist', sans-serif;
+    color: #386641;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#registrar{
+    font-family: 'Urbanist', sans-serif;
+    background: #386641;
+    color: #F2E8CF;
+    font-size: 20px;
+}
+
+#recargar{
+    font-family: 'Urbanist', sans-serif;
+    color: #386641;
+    font-size: 20px;
+}
+
+a{
+    font-size: 100px;
+}
+
+#buscar{
+    background:#386641;
+}
+ i {
+    color: #F2E8CF;
+ }

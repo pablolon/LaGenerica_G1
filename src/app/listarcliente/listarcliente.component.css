@@ -1,0 +1,58 @@
+p {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    color: #386641;
+    text-align: center;
+}
+form{
+    color:#386641;
+    font-family:"Urbanist";
+}
+.btn-primary{
+    color: #386641;
+}
+form {
+    /* Centrar el formulario en la página */
+    margin: 0 auto;
+    width: 400px;
+    /* Esquema del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+  #imagen {
+      height: 200px;
+      align-items: center;
+      padding: 20px;
+  }
+
+  button{
+      background-color: #386641;
+      color: #f2e8cf;
+  }
+  i{
+      color: #386641;
+  }
+
+th{
+    background: #386641;
+    color:  #f2e8cf;
+}
+td{
+    color: #386641;
+}
+
+input{
+    color:  #386641;
+    border-radius: 15px;
+    border-color: #386641;
+}
+
+button {
+    border-radius: 15px;
+}
+
+.tit {
+    text-align: center;
+}
