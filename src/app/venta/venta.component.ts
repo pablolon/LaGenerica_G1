@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class VentaComponent implements OnInit {
 
-  constructor(private clientehttp: HttpClient, private toastr:ToastrService) { }
+  constructor(private clientehttp: HttpClient) { }
 
   apiURL: string = "http://localhost:8080/api/";
 
@@ -174,7 +173,7 @@ export class VentaComponent implements OnInit {
 
         this.codigorespuesta = response.status;
 
-
+/**
         switch (this.codigorespuesta) {
           case 201:
             this.postConsolidado();
@@ -190,8 +189,8 @@ export class VentaComponent implements OnInit {
             break;
 
         }
-
-
+*/
+        
       }
     );
     this.postConsolidado()
@@ -210,8 +209,8 @@ export class VentaComponent implements OnInit {
 
     });
   }
-
-  showNotification(from:any, align:any, type:any) {
+/**
+  showNotification(from, align, type) {
     switch (type) {
       case 1:
         this.toastr.success('<b>Dato creado con exito</b>', '', {
@@ -242,7 +241,7 @@ export class VentaComponent implements OnInit {
         break;
     }
   }
-
+*/
   reload() {
     window.location.reload()
   }
@@ -262,5 +261,8 @@ export class VentaComponent implements OnInit {
       "nombreproducto": ""
     }]
     this.getConsecutivo();
+
+
   }
+
 }
